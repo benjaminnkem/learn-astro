@@ -1,0 +1,20 @@
+---
+import { Icon } from "astro-icon/components";
+import { skills } from "../../../data/home";
+---
+
+<section>
+  <div class="container py-40 space-y-8">
+    <h3 class="font-anton text-7xl uppercase text-center">SKIlls</h3>
+    <div class="flex items-center gap-8 flex-wrap justify-center">
+      {
+        skills.map((skill) => (
+          <div class="space-y-3 p-2 px-4 cursor-pointer duration-300 hover:bg-primary/10 border border-primary/10 rounded-lg">
+            <Icon name={skill.icon.name} class="text-[7rem]" />
+            <p class="text-center font-medium">{skill.name}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
