@@ -1,0 +1,31 @@
+---
+import { Icon } from "astro-icon/components";
+import Button from "../../Common/Button/Button.astro";
+---
+
+<section class="py-[10rem] bg-secondaryPurple">
+  <div class="container grid grid-cols-2 gap-20 items-center">
+    <div class="relative">
+      <Icon name="internet" class="text-[10rem] absolute -right-10 rotate-12 text-secondary" />
+      <p class="text-[10rem] font-anton leading-tight text-secondary">My Dev Journey</p>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-lg">I'm just a teenager born and brought up in Lagos, Nigeria.</h2>
+      <p class="font-anton text-4xl uppercase">It all started back in 2019</p>
+
+      <div class="pt-5 space-y-3">
+        <div class="grid grid-cols-4 gap-4">
+          {
+            Array.from({ length: 4 }).map((_) => (
+              <div class="border duration-100 hover:scale-105 grid place-content-center aspect-square rounded-xl border-primary/50 text-primary/50">
+                <Icon name="image" class="text-4xl" />
+              </div>
+            ))
+          }
+        </div>
+        <Button text="Read more" size="medium" roundness="lg" />
+      </div>
+    </div>
+  </div>
+</section>

@@ -6,7 +6,7 @@ import { navLinks } from "../../data/nav";
   <div class="container py-5 flex items-center justify-between">
     <a href="/" class="font-anton text-3xl">BN</a>
 
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-8 text-primary/80 text-sm">
       {
         navLinks.map((navLink) => (
           <div>
@@ -14,6 +14,8 @@ import { navLinks } from "../../data/nav";
           </div>
         ))
       }
+      <button class="bg-secondary font-bold text-dark px-4 py-2 rounded-full">Let's talk</button>
     </div>
+
   </div>
 </nav>

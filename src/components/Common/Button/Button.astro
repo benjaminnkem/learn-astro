@@ -1,0 +1,57 @@
+---
+type Props = {
+  size?: "small" | "medium" | "large";
+  variant?: "outline" | "filled";
+  text: string;
+  loading?: boolean;
+  disabled?: boolean;
+  fullWidth?: boolean;
+  classes?: string;
+  roundness?: "sm" | "md" | "lg" | "xl" | "2xl" | "full" | "none";
+  onClick?: () => void;
+};
+
+const {
+  text,
+  size = "small",
+  variant = "outline",
+  fullWidth = false,
+  loading = false,
+  disabled = false,
+  roundness = "none",
+  classes = "",
+  onClick = () => {},
+  ...rest
+} = Astro.props as Props;
+
+let classStyles = "duration-200 disabled:opacity-40 ";
+
+switch (size) {
+  case "small":
+    classStyles += " px-3 py-2 text-sm ";
+    break;
+  case "medium":
+    classStyles += " px-5 py-2 ";
+    break;
+  case "large":
+    classStyles += " px-8 py-3 ";
+    break;
+}
+
+switch (variant) {
+  case "outline":
+    classStyles += " border border-secondary text-secondary hover:bg-secondary hover:text-dark ";
+    break;
+  case "filled":
+    classStyles += " bg-secondary text-dark hover:bg-secondary/70 ";
+    break;
+  default:
+    break;
+}
+---
+
+<button
+  class={`${classStyles} ${classes} ${fullWidth ? "w-full" : ""} rounded-${roundness} `}
+  onclick="onClick()"
+  disabled={disabled}>{loading ? "Loading..." : text}</button
+>
