@@ -1,7 +1,11 @@
 ---
-import MainHead from "./MainHead.astro";
+import "../styles/global.css";
+
 import "@fontsource-variable/dm-sans";
 import "@fontsource/anton";
+
+import MainHead from "./MainHead.astro";
+import Navbar from "./Navbar/index.astro";
 
 interface Props {
   title: string;
@@ -13,7 +17,8 @@ const { title, description } = Astro.props as Props;
 
 <html lang="en">
   <MainHead {title} {description} />
-  <body class="font-sans">
+  <body class="font-sans bg-dark text-primary">
+    <Navbar />
     <slot />
   </body>
 </html>

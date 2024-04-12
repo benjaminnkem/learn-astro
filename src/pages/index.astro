@@ -1,12 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import ClickButton from "../components/ClickButton";
+import Hero from "../components/UI/Home/Hero.astro";
 ---
 
 <MainLayout title="Home Page" description="This is the home page">
-  <h1>
-    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed totam nobis illum blanditiis iusto atque dolorum
-    suscipit sint amet dicta, cupiditate labore nostrum facere, veritatis dolorem consequatur dolores earum neque.
-  </h1>
-  <ClickButton client:load />
+  <Hero />
 </MainLayout>

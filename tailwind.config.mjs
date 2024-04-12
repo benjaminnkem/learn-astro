@@ -9,6 +9,14 @@ export default {
         sans: ["DM Sans Variable", ...defaultTheme.fontFamily.sans],
         anton: ["Anton", ...defaultTheme.fontFamily.sans],
       },
+      colors: {
+        primary: "#ffffe3",
+        dark: "#000000",
+      },
+      container: {
+        center: true,
+        padding: "1rem",
+      },
     },
   },
   plugins: [],
