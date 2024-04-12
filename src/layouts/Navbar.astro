@@ -1,0 +1,24 @@
+---
+import { navLinks } from "../data/nav";
+---
+
+<nav>
+  <div class="container py-5 flex items-center justify-between">
+    <div id="logo">
+      <a href="/" class="font-anton text-3xl" aria-label="Logo"> BN </a>
+    </div>
+
+    <div class="flex items-center gap-8 text-primary/80 text-sm">
+      {
+        navLinks.map((navLink) => (
+          <div class="nav_link">
+            <a href={navLink.href} aria-label="Go to another page">
+              {navLink.title}
+            </a>
+          </div>
+        ))
+      }
+      <button class="bg-secondary nav_link font-bold text-dark px-4 py-2 rounded-full">Let's talk</button>
+    </div>
+  </div>
+</nav>
