@@ -10,7 +10,10 @@ const DontKnowYet = () => {
   useEffect(() => {}, []);
 
   const triggerTextAnim = () => {
-    gsap.from(".text_cant", { opacity: 0, y: "20%", delay: 0.3, stagger: 0.2 });
+    gsap
+      .timeline()
+      .from(".text_cant", { opacity: 0, y: "20%", delay: 0.3, stagger: 0.2 })
+      .from("#dontknow_img", { opacity: 0 });
   };
 
   useGSAP(
@@ -32,7 +35,18 @@ const DontKnowYet = () => {
   );
 
   return (
-    <section className="h-screen 2xl:h-auto 2xl:py-40" ref={ref}>
+    <section
+      className="min-h-screen pt-40 pb-64 2xl:h-auto 2xl:py-40 relative before:absolute before:top-0 before:left-0 before:w-full before:h-[10rem] before:content-[''] before:bg-gradient-to-b before:from-dark"
+      ref={ref}
+    >
+      <img
+        src="/svgs/block-pattern.svg"
+        alt="pattern"
+        width={1000}
+        height={800}
+        className="absolute top-0 left-0 w-full h-full object-cover -z-[1]"
+      />
+
       <div className="container items-center h-full grid grid-cols-2 gap-10">
         <div id="text-part">
           <h3 className="font-anton uppercase text-[4rem] text_cant">can't think of a text now.</h3>
@@ -47,7 +61,7 @@ const DontKnowYet = () => {
             </p>
           </div>
         </div>
-        <div className="aspect-square border border-zinc-600 rounded-xl grid place-content-center">
+        <div className="aspect-square border border-zinc-600 rounded-xl grid place-content-center" id="dontknow_img">
           <MaterialSymbolsImageRounded size={100} className="opacity-50" />
         </div>
       </div>
