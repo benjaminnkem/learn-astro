@@ -3,12 +3,21 @@ import Education from "./Education";
 import Work from "./Work";
 import gsap from "gsap";
 import { TabHead } from "./Timeline";
+import { useGSAP } from "@gsap/react";
 
 export type Tab = "education" | "work";
 
 const Experience = () => {
   const ref = useRef<HTMLDivElement>(null);
   const [tab, setTab] = useState<Tab>("education");
+
+  // hide work initially
+  useGSAP(
+    () => {
+      gsap.set("#work", { display: "none" });
+    },
+    { scope: ref.current }
+  );
 
   const activateTabAnim = (tab: Tab) => {
     gsap.context(() => {
@@ -20,8 +29,6 @@ const Experience = () => {
         .to(tab === "work" ? "#work" : "#education", { opacity: 1 });
     }, ref.current);
   };
-
-  const toggle = () => {};
 
   const updateTab = (tab: Tab) => {
     setTab(tab);
