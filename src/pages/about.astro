@@ -3,5 +3,8 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="About page" description="This is the about page">
-  <h1>Hello</h1>
+  <header class="w-full relative overflow-hidden h-[15rem]">
+    <img src="/images/me_cover.png" alt="cover image" class="h-full object-cover absolute bottom-0 left-0 w-full" />
+    <div class="absolute top-0 left-0 bg-black/50 w-full h-full"></div>
+  </header>
 </MainLayout>

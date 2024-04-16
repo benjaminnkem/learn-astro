@@ -6,6 +6,7 @@ import DevJourney from "../components/UI/Home/DevJourney.astro";
 import Skills from "../components/UI/Home/Skills.astro";
 import DontKnowYet from "../components/UI/Home/Tsx/DontKnowYet";
 import Experience from "../components/UI/Home/Tsx/Experience/Index";
+import Projects from "../components/UI/Home/Projects.astro";
 ---
 
 <MainLayout title="Benjamin Nkem - Fullstack Web Developer" description="This is the home page">
@@ -15,4 +16,5 @@ import Experience from "../components/UI/Home/Tsx/Experience/Index";
   <Skills />
   <DontKnowYet client:load />
   <Experience client:visible />
+  <Projects />
 </MainLayout>

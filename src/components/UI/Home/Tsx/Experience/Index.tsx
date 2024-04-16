@@ -44,7 +44,7 @@ const Experience = () => {
           d="M0,64L48,90.7C96,117,192,171,288,160C384,149,480,75,576,80C672,85,768,171,864,202.7C960,235,1056,213,1152,202.7C1248,192,1344,192,1392,192L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
         ></path>
       </svg>
-      <section className="min-h-screen 2xl:h-auto bg-primary text-dark">
+      <section className="min-h-screen 2xl:h-auto bg-primary text-dark z-[10]">
         {/* education */}
         <TabHead tab={tab} updateTab={updateTab} />
 

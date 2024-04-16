@@ -31,7 +31,7 @@ export const TabHead: React.FC<{ updateTab: (tab: Tab) => void; tab: Tab }> = ({
           tab === "work" ? "text-sm border-secondaryPurple" : "border-transparent"
         }`}
         onClick={() => updateTab("education")}
-        title={tab === "work" && "Show education"}
+        title={tab === "work" ? "Show education" : ""}
       >
         EDUCATION
       </span>
@@ -40,7 +40,7 @@ export const TabHead: React.FC<{ updateTab: (tab: Tab) => void; tab: Tab }> = ({
           tab === "education" ? "text-sm border-secondaryPurple" : "border-transparent"
         }`}
         onClick={() => updateTab("work")}
-        title={tab === "education" && "Show work"}
+        title={tab === "education" ? "Show work" : ""}
       >
         WORK
       </span>
